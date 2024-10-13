@@ -10,6 +10,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        function open_shop_menu() {
+            const element = document.getElementById('dropdown_menu');
+            if (element.style.display === "none") {
+                element.style.display = 'block';
+                // element.style.visibility = "visible"; // Show the dropdown
+
+            } else {
+                element.style.display = 'none';
+
+                // element.style.visibility = "hidden"; // Hide the dropdown
+            }
+        }
+        function open_ul_items_and_cart_button() {
+            const ul = document.getElementById('navbar_ul');
+            const cart = document.getElementById('cart_button');
+            if (ul.style.display === "none") {
+                ul.style.display = 'block';
+                cart.style.display = 'block';
+
+            } else {
+                ul.style.display = 'none';
+                cart.style.display = 'none';
+
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -17,19 +44,30 @@
     <nav class="flex container navbar">
         <div class="flex navbar__main_buttons">
             <div class="navbar__main_buttons__logo"><a href="">Start Bootstrap</a></div>
-            <div class="navbar__main_buttons__ul">
+            <div class="navbar__main_buttons__ul" id="navbar_ul">
                 <ul class="flex">
                     <li><a href="">Home</a></li>
                     <li><a href="">About</a></li>
-                    <li><a href="">Shop <i class="fa-solid fa-caret-down"></i></a></li>
+                    <li class="ul__shop_button"><button onclick="open_shop_menu()">Shop <i
+                                class="fa-solid fa-caret-down"></i></button>
+                        <div id="dropdown_menu">
+                            <ul>
+                                <li><a href="">All Products</a></li>
+                                <hr>
+                                <li><a href="">Popular Items</a></li>
+                                <li><a href="">New Arrivals</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
+            <div class="navbar__cart_button" id="cart_button">
+                <button>Cart <i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
         </div>
-        <div class="navbar__cart_button">
-            <button>Cart <i class="fa-solid fa-cart-shopping"></i></button>
-        </div>
-        <div class="navbar__toggle_menu">
-            <button><i class="fa-solid fa-bars" style="color: rgba(0, 0, 0, 0.55)"></i></button>
+
+        <div class="navbar__toggle_menu" onclick="open_ul_items_and_cart_button()">
+            <button><i class="fa-solid fa-bars"></i></button>
         </div>
     </nav>
     <!-- nav end -->
@@ -54,7 +92,7 @@
                 <p>
                     $40.00 - $80.00
                 </p>
-                <button><a href="">View options</a></button>
+                <button>View options</button>
             </div>
             <div class="card_item">
                 <div class="card_picture">
@@ -69,7 +107,7 @@
                     <span class="fa fa-star checked"></span>
                 </div>
                 <p><del>$20.00</del> $18.00</p>
-                <button><a href="">Add to cart</a></button>
+                <button>Add to cart</button>
             </div>
             <div class="card_item">
                 <div class="card_picture">
@@ -77,7 +115,7 @@
                 </div>
                 <h2 class="card_header">Sale item</h2>
                 <p><del>$50.00 $25.00</del></p>
-                <button><a href="">Add to cart</a></button>
+                <button>Add to cart</button>
             </div>
             <div class="card_item">
                 <div class="card_picture">
@@ -92,7 +130,7 @@
                     <span class="fa fa-star checked"></span>
                 </div>
                 <p>$40.00</p>
-                <button><a href="">Add to cart</a></button>
+                <button>Add to cart</button>
             </div>
             <div class="card_item">
                 <div class="card_picture">
@@ -100,7 +138,7 @@
                 </div>
                 <h2 class="card_header">Sale item</h2>
                 <p><del>$50.00</del> $25.00</p>
-                <button><a href="">Add to cart</a></button>
+                <button>Add to cart</button>
             </div>
             <div class="card_item">
                 <div class="card_picture">
@@ -108,7 +146,7 @@
                 </div>
                 <h2 class="card_header">Fancy Product</h2>
                 <p>$120.00 - $280.00</p>
-                <button><a href="">View options</a></button>
+                <button>View options</button>
             </div>
             <div class="card_item">
                 <div class="card_picture">
@@ -123,7 +161,7 @@
                     <span class="fa fa-star checked"></span>
                 </div>
                 <p><del>$20.00</del> $18.00</p>
-                <button><a href="">Add to cart</a></button>
+                <button>Add to cart</button>
             </div>
             <div class="card_item">
                 <div class="card_picture">
@@ -138,7 +176,7 @@
                     <span class="fa fa-star checked"></span>
                 </div>
                 <p>$40.00</p>
-                <button><a href="">Add to cart</a></button>
+                <button>Add to cart</button>
             </div>
         </section>
     </main>

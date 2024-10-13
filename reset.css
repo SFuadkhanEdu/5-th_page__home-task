@@ -3,8 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
-ul,ol,a{
+ul,ol,a,button{
     text-decoration: none;
     list-style-type: none;
     color: rgba(0, 0, 0, 0.55);
+    border-style: none;
+    background-color: white;
+    cursor: pointer;
 }
