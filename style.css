@@ -15,20 +15,22 @@ nav {
 }
 .navbar__main_buttons__logo {
   padding: 8px 0;
+  font-size: 30px;
   margin-right: 30px;
 }
 .navbar__main_buttons__ul {
+  align-items: center;
   padding: 16px 0;
 }
 .navbar__main_buttons__ul ul {
   gap: 10px;
 }
 .navbar__main_buttons {
-    flex-grow: 1;
+  flex-grow: 1;
   align-items: baseline;
 }
 .navbar__cart_button {
-    margin-left: auto; /* This will push the cart button to the end */
+  margin-left: auto;
 }
 .navbar__cart_button button {
   padding: 6px 12px;
@@ -36,26 +38,40 @@ nav {
   border-radius: 0.375rem;
   background-color: white;
 }
-.ul__shop_button {
-    position: relative;
+.number_div{
+    margin-left: 5px;
 }
-.ul__shop_button #dropdown_menu {
-    display: none;
-    position: absolute;
-    /* z-index: 1; */
-    left: 0px;
-    top: 20px;
-    width: 120px;
-    /* visibility: hidden; Start hidden */
-    background-color: white;
-    border: 1px solid gray;
-    padding: 10px;
-    /* transition: visibility 300ms, opacity 300ms ease; Add opacity for smooth transition */
-    /* opacity: 0; Start as invisible */
+#number{
+    height: 90%;
+    width: 90%;
+    border-radius: 100%;
+    padding:3px 5px;
+    background-color: black;
+    color: white;
+}
+.ul__shop_button {
+  position: relative;
+}
+.ul__shop_button .dropdown_menu {
+  display: none;
+  position: absolute;
+  /* z-index: 1; */
+  left: 0px;
+  top: 20px;
+  width: 120px;
+  /* visibility: hidden; Start hidden */
+  background-color: white;
+  border: 1px solid gray;
+  padding: 10px;
+  /* transition: visibility 300ms, opacity 300ms ease; Add opacity for smooth transition */
+  /* opacity: 0; Start as invisible */
 }
 
-.navbar #dropdown_menu li {
+.navbar .dropdown_menu li {
   margin-top: 10px;
+}
+.ul__shop_button #dropdown_menu ul .first_list {
+  margin-top: 0px;
 }
 .navbar__toggle_menu {
   display: none;
@@ -66,6 +82,7 @@ nav {
 }
 .navbar__toggle_menu button i {
   color: rgba(0, 0, 0, 0.55);
+  font-size: 30px;
 }
 .navbar__toggle_menu button:active {
   border: 3px solid black;
@@ -135,9 +152,9 @@ header {
 .stars {
   color: gold;
 }
-.card_item button:hover{
-    background-color: black;
-    color: white;
+.card_item button:hover {
+  background-color: black;
+  color: white;
 }
 /* main end */
 
@@ -156,20 +173,20 @@ footer .container {
 @media screen and (max-width: 1200px) {
   .main__product_cards {
     grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
+    /* grid-template-rows: auto auto; */
+    justify-items: center;
+    justify-content: center;
   }
 }
 
 @media screen and (max-width: 992px) {
-  /* .navbar__cart_button {
+  .navbar__main_buttons__ul,
+  .navbar__cart_button {
     display: none;
-  } */
-   .navbar__main_buttons__ul, .navbar__cart_button{
-    display: none;
-   }
-   .navbar__cart_button{
+  }
+  .navbar__cart_button {
     margin-left: 0;
-   }
+  }
   nav {
     padding-right: 20px;
     justify-content: space-between;
@@ -178,17 +195,24 @@ footer .container {
   .navbar__toggle_menu {
     display: block;
   }
-  .navbar__main_buttons{
+  .navbar__main_buttons {
     flex-direction: column;
     gap: 0px;
     align-items: flex-start;
     justify-content: space-between;
   }
-  .navbar__main_buttons ul{
+  .navbar__main_buttons ul {
     display: block;
     margin: 0 auto;
   }
-  
+  .ul__shop_button {
+    position: static !important;
+  }
+  #dropdown_menu {
+    position: static;
+    width: 70vw;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (max-width: 786px) {
@@ -198,7 +222,8 @@ footer .container {
   }
   .main__product_cards {
     grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto auto;
+    /* grid-template-rows: auto auto auto; */
     padding: 48px 0;
+    gap: 5px;
   }
 }
